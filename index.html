@@ -2,18 +2,18 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>은평구 오징어 아름이 뱃살 키우기</title>
+  <title>은평구 명물 아름이 뱃살 키우기</title>
   <style>
     body { text-align: center; font-family: Arial; margin-top: 20px; }
 
     #fatImage {
-      margin-top: 40px;
-      width: 50%;
+      margin-top: 20px;
+      width: 60%;
       height: auto;
     }
 
     button {
-      width: 42%;
+      width: 46%;
       padding: 20px;
       font-size: 22px;
       margin: 8px;
@@ -21,12 +21,11 @@
       display: inline-block;
       box-sizing: border-box;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s ease;
+      transition: background-color 0.2s;
     }
 
     button:active {
       background-color: #ffcccc;
-      transform: scale(0.98);
     }
 
     @media (max-width: 768px) {
@@ -40,7 +39,6 @@
 
       #fatImage {
         width: 70%;
-        margin-top: 50px;
       }
 
       p {
@@ -54,7 +52,7 @@
   </style>
 </head>
 <body>
-  <h1>은평구 오징어 아름이 뱃살 키우기</h1>
+  <h1>은평구 명물 아름이 뱃살 키우기</h1>
   <p>현재 뱃살: <span id="fat">0</span>g</p>
 
   <div>
@@ -75,7 +73,7 @@
 
     function vibrate() {
       if (navigator.vibrate) {
-        navigator.vibrate([100, 50, 100]);
+        navigator.vibrate(50);
       }
     }
 
@@ -106,7 +104,7 @@
         fat -= 150;
         alert("아름이는 배탈나서 150g 뺐다. 화장실 지옥이었다.");
       } else {
-        alert("쌀 게 없다!");
+        alert("똥이 안 나온다! 이제 쌀 게 없다!");
       }
       document.getElementById("fat").innerText = fat;
       evolve();
