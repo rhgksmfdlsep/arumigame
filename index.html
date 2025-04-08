@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>은평구 명물 아름이 뱃살 키우기</title>
+  <title>아름이 뱃살 키우기</title>
   <style>
     body { text-align: center; font-family: Arial; margin-top: 20px; }
 
@@ -21,11 +21,12 @@
       display: inline-block;
       box-sizing: border-box;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, transform 0.1s ease;
     }
 
     button:active {
       background-color: #ffcccc;
+      transform: scale(0.98);
     }
 
     @media (max-width: 768px) {
@@ -52,7 +53,7 @@
   </style>
 </head>
 <body>
-  <h1>은평구 명물 아름이 뱃살 키우기</h1>
+  <h1>아름이 뱃살 키우기</h1>
   <p>현재 뱃살: <span id="fat">0</span>g</p>
 
   <div>
@@ -73,7 +74,7 @@
 
     function vibrate() {
       if (navigator.vibrate) {
-        navigator.vibrate(50);
+        navigator.vibrate([100, 50, 100]); // 더 강하게: 진동-멈춤-진동
       }
     }
 
@@ -104,7 +105,7 @@
         fat -= 150;
         alert("아름이는 배탈나서 150g 뺐다. 화장실 지옥이었다.");
       } else {
-        alert("똥이 안 나온다! 이제 쌀 게 없다!");
+        alert("쌀 게 없다!");
       }
       document.getElementById("fat").innerText = fat;
       evolve();
