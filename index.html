@@ -34,13 +34,13 @@
 
     function upgrade() {
       if (fat >= 100) {
-        fat -= 100;
+        fat += 100;
         fatGain *= 2;
         document.getElementById("fat").innerText = fat;
         alert("폭식력이 강화되었다! 한 번에 " + fatGain + "g 증가!");
         evolve();
       } else {
-        alert("뱃살이 부족합니다! 더 먹어!");
+        alert("뱃살이 씨이발~ 부족합니다! 존나 먹어!");
       }
     }
 
