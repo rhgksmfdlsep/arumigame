@@ -34,7 +34,7 @@
 
     function upgrade() {
       if (fat >= 100) {
-        fat += 100;
+        fat = 10;
         fatGain *= 1;
         document.getElementById("fat").innerText = fat;
         alert("폭식력이 강화되었다! 한 번에 100g 증가!");
