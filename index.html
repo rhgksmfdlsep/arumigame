@@ -11,6 +11,33 @@
       width: 250px;
       height: auto;
     }
+
+    @media (max-width: 768px) {
+      body {
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      button {
+        width: 90%;
+        font-size: 20px;
+        padding: 15px 0;
+        margin: 10px auto;
+        display: block;
+      }
+
+      #fatImage {
+        width: 80%;
+        height: auto;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -36,15 +63,8 @@
     }
 
     function upgrade() {
-      if (fat >= 100) {
-        fat -= 100;
-        fatGain *= 2;
-        alert("폭식력이 강화되었다! 한 번에 " + fatGain + "g 증가!");
-      } else {
-        alert("뱃살이 부족합니다! 더 먹어!");
-      }
-      document.getElementById("fat").innerText = fat;
-      evolve();
+      fatGain *= 2;
+      alert("폭식력이 즉시 강화되었다! 한 번에 " + fatGain + "g 증가!");
     }
 
     function rageEat() {
