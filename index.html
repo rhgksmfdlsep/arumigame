@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,13 +16,17 @@
 <body>
   <h1>아름이 뱃살 키우기</h1>
   <p>현재 뱃살: <span id="fat">0</span>g</p>
-  <button onclick="eat(10)">폭식하기</button>
-  <button onclick="upgrade(100)">폭식 강화 (100g)</button>
+  
+  <button onclick="eat()">폭식하기</button>
+  <button onclick="upgrade()">폭식 강화 (100g)</button>
+  <button onclick="rageEat()">폭식 폭주 (300g)</button>
+  <button onclick="diarrhea()">배탈나기</button>
+
   <div><img id="fatImage" src="arumi_stage_1.png" alt="아름이"></div>
 
   <script>
-    let fat = 10;
-    let fatGain = 100;
+    let fat = 0;
+    let fatGain = 10;
     const image = document.getElementById("fatImage");
 
     function eat() {
@@ -34,14 +37,32 @@
 
     function upgrade() {
       if (fat >= 100) {
-        fat = 10;
-        fatGain *= 1;
-        document.getElementById("fat").innerText = fat;
-        alert("폭식력이 강화되었다! 한 번에 100g 증가!");
-        evolve();
+        fat -= 100;
+        fatGain *= 2;
+        alert("폭식력이 강화되었다! 한 번에 " + fatGain + "g 증가!");
       } else {
-        alert("뱃살이 씨이발~ 부족합니다! 존나 먹어!");
+        alert("뱃살이 부족합니다! 더 먹어!");
       }
+      document.getElementById("fat").innerText = fat;
+      evolve();
+    }
+
+    function rageEat() {
+      fat += 300;
+      alert("아름이는 폭식 폭주 상태! 라면 9개 순삭.");
+      document.getElementById("fat").innerText = fat;
+      evolve();
+    }
+
+    function diarrhea() {
+      if (fat >= 300) {
+        fat -= 150;
+        alert("아름이는 배탈나서 150g 뺐다. 화장실 지옥이었다.");
+      } else {
+        alert("쌀 게 없다!");
+      }
+      document.getElementById("fat").innerText = fat;
+      evolve();
     }
 
     function evolve() {
