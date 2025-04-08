@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>아름이 뱃살 키우기</title>
+  <title>은평구 오징어녀 아름이 뱃살 키우기</title>
   <style>
     body { text-align: center; font-family: Arial; margin-top: 20px; }
 
@@ -54,12 +54,12 @@
   </style>
 </head>
 <body>
-  <h1>아름이 뱃살 키우기</h1>
+  <h1>은평구 오징어녀 아름이 뱃살 키우기</h1>
   <p>현재 뱃살: <span id="fat">0</span>g</p>
 
   <div>
-    <button onclick="eat()">폭식하기</button>
-    <button onclick="upgrade()">폭식 강화 (100g)</button>
+    <button onclick="eat()">쳐먹기</button>
+    <button onclick="upgrade()">돼지력 강화 (100g)</button>
   </div>
   <div>
     <button onclick="rageEat()">폭식 폭주 (300g)</button>
@@ -88,23 +88,7 @@
 
     function upgrade() {
       vibrate();
-      fatGain *= 2;
-      alert("폭식력이 즉시 강화되었다! 한 번에 " + fatGain + "g 증가!");
-    }
-
-    function rageEat() {
-      vibrate();
-      fat += 300;
-      alert("아름이는 폭식 폭주 상태! 라면 9개 순삭.");
-      document.getElementById("fat").innerText = fat;
-      evolve();
-    }
-
-    function diarrhea() {
-      vibrate();
-      if (fat >= 300) {
-        fat -= 150;
-        alert("아름이는 배탈나서 150g 뺐다. 화장실 지옥이었다.");
+      fat서 150g 뺐다. 화장실 지옥이었다.");
       } else {
         alert("쌀 게 없다!");
       }
