@@ -13,41 +13,46 @@
     }
 
     button {
-  width: 46%;
-  padding: 20px;
-  font-size: 22px;
-  margin: 8px;
-  border-radius: 10px;
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-}
+      width: 46%;
+      padding: 20px;
+      font-size: 22px;
+      margin: 8px;
+      border-radius: 10px;
+      display: inline-block;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
 
-@media (max-width: 768px) {
-  button {
-    width: 90%;
-    padding: 25px;
-    font-size: 24px;
-    margin: 10px auto;
-    display: block;
-  }
+    button:active {
+      background-color: #ffcccc;
+    }
 
-  #fatImage {
-    width: 70%;
-  }
+    @media (max-width: 768px) {
+      button {
+        width: 90%;
+        padding: 25px;
+        font-size: 24px;
+        margin: 10px auto;
+        display: block;
+      }
 
-  p {
-    font-size: 24px;
-  }
+      #fatImage {
+        width: 70%;
+      }
 
-  h1 {
-    font-size: 32px;
-  }
-}
+      p {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>아름이 뱃살 키우기</h1>
+  <h1>은평구 명물 아름이 뱃살 키우기</h1>
   <p>현재 뱃살: <span id="fat">0</span>g</p>
 
   <div>
@@ -66,18 +71,27 @@
     let fatGain = 10;
     const image = document.getElementById("fatImage");
 
+    function vibrate() {
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
+    }
+
     function eat() {
+      vibrate();
       fat += fatGain;
       document.getElementById("fat").innerText = fat;
       evolve();
     }
 
     function upgrade() {
+      vibrate();
       fatGain *= 2;
       alert("폭식력이 즉시 강화되었다! 한 번에 " + fatGain + "g 증가!");
     }
 
     function rageEat() {
+      vibrate();
       fat += 300;
       alert("아름이는 폭식 폭주 상태! 라면 9개 순삭.");
       document.getElementById("fat").innerText = fat;
@@ -85,11 +99,12 @@
     }
 
     function diarrhea() {
+      vibrate();
       if (fat >= 300) {
         fat -= 150;
         alert("아름이는 배탈나서 150g 뺐다. 화장실 지옥이었다.");
       } else {
-        alert("쌀 게 없다!");
+        alert("똥이 안 나온다! 이제 쌀 게 없다!");
       }
       document.getElementById("fat").innerText = fat;
       evolve();
